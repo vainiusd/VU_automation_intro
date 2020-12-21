@@ -24,14 +24,14 @@
                     </section>
                 
                     <section>
-                        <h3 style="color:#85335c"> Agenda (Theory) </h3>
+                        <h5 style="color:#85335c"> Agenda (Theory) </h5>
                         <ul>
-                            <li>Idea</li>
-                            <li>Paradigms</li>
-                            <li>Patterns</li>
-                            <li>Imperative Automation</li>
-                            <li>Declarative Automation</li>
-                            <li>Managing configuration data</li>
+                            <li> Idea </li>
+                            <li> Terms </li>
+                            <li> Paradigms </li>
+                            <li> Patterns </li>
+                            <li> Data representation </li>
+                            <li> Tooling </li>
                         </ul>
                     </section>
                 
@@ -40,11 +40,11 @@
                 <section>
                 
                     <section>
-                        <p style="color:#85335c"> Ideas that power automation </p>
+                        <h4 style="color:#85335c"> Ideas that power automation </h4>
                     </section>
                 
                     <section>
-                    	<p style="color:#85335c"> Ideas that power automation </p>
+                    	<h5 style="color:#85335c"> Ideas that power automation </h5>
                     	<ul>
 	                        <li> Growth of connectivity </li>
 	                        <li class="fragment"> Requirement for higher quality </li>
@@ -53,79 +53,291 @@
 	                        <li class="fragment"> Decrease of cost </li>
 	                    </ul>
                 	</section>
-                    
-                    <section>
-                        <a href="https://revealjs.com">
-                            <img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-                        </a>
-                        <h3>The HTML Presentation Framework</h3>
-                    </section>
                 
+                    <section>
+                        <img src="images/communication-speed.png" alt="Comunication speed graph">
+                    </section>
+                   
                 </section>
+
+                <!-- Automation terminology -->
+                <section>
+
+                    <section>
+                        <h4 style="color:#85335c"> Automation terminology </h4>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Orchestration </h5>
+                        <p> Controling task execution and managing workflow sequence. </p>
+                        <p> Especially important when end result has dependencies between separate systems </p>
+                    </section>
+                        
+                    <section>
+                        <h5 style="color:#85335c"> Instruction-set </h5>
+                        <p> Ordered sequence of tasks (commands, calls or any  other type of actions). </p>
+                        <p> Strictly formed according to the managed system's needs. </p>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> State </h5>
+                        <p> Device or service configuration/operational status that fulfills defined requirements. </p>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Indempotency </h5>
+                        <p> Ability to evaluate state and execute actions only when a change to current state is needed. </p>
+                        <p> Idempotent operation is one that has no additional effect if it is called more than once with the same input parameters. </p>
+                    </section>
+
+                </section>
+
                 <!-- Automation Paradigms -->
                 <section>
                 
                     <section>
-                        <p style="color:#85335c"> Automation paradigms </p>
+                        <h4 style="color:#85335c"> Automation paradigms </h4>
                     </section>
                 
                     <section>
-                        <p style="color:#85335c"> Declarative/Model-Based Automation </p>
-                        <p> Emphasis on what to do (model), not on how to do (instructions). </p>
-                        <p> Driven by data that defines desired state. </p>
-                        <p> Possible states are modeled. </p>
-                        <p> Intension is declared. </p>
-                        <p> Resulting state is verified. </p>
+                        <h5 style="color:#85335c"> Declarative </h5>
+                        <ul>
+                            <li class="fragment"> Emphasis on what to do (model), not on how to do (instructions). </li>
+                            <li class="fragment"> Driven by data that defines desired state. </li>
+                            <li class="fragment"> Possible states are modeled. </li>
+                            <li class="fragment"> Intension is declared. </li>
+                            <li class="fragment"> Resulting state is verified. </li>
+                        </ul>
                     </section>
                     
                     <section>
-                        <p style="color:#85335c"> Imperative </p>
-                        <p> Emphasis on what changes must be done to reach desired outcomes (instructions). </p>
-                        <p> Workflow (instructions) are developed for possible outcomes. </p>
-                        <p> Workflow is initiated </p>
-                        <p> Tasks are completed sequentialy. </p>
-                        <p> Resulting state is verified. </p>
+                        <h5 style="color:#85335c"> Imperative </h5>
+                        <ul>
+                            <li class="fragment"> Emphasis on what changes must be done to reach desired outcomes (instructions). </li>
+                            <li class="fragment"> Workflow (instructions) are developed for possible outcomes. </li>
+                            <li class="fragment"> Workflow is initiated. </li>
+                            <li class="fragment"> Tasks are completed sequentialy. </li>
+                            <li class="fragment"> Resulting state is verified. </li>
+                        </ul>
                     </section>
                 
                 </section>
                 <!-- Automation Patterns -->
                 <section>
                 	<section>
-                	    <h5 style="color:#85335c"> Automation patterns </h5>
+                	    <h4 style="color:#85335c"> Automation patterns </h4>
                 	</section>
 
                 	<section>
-                		<h5 style="color:#85335c"> Toplogy </h5>
-                		<p> The automation topology is almost always star shaped. </p>
-                        <p> Center - control and automation engine. </p>
-                        <p> Bundled with data that is needed to define tasks and state. </p>
-                        <p> Spokes - managed objects or automation agents parralel to the managed objects. </p>
-                	</section>
+                		<h5 style="color:#85335c"> Topology </h5>
+                    	<ul>
+                        	<li class="fragment"> The automation topology is star shaped. </li>
+                            <li class="fragment"> Center - control and automation engine. </li>
+                            <li class="fragment"> Data that is needed to define tasks and state is near the center. </li>
+                            <li class="fragment"> Spokes - managed objects or automation agents next to the managed objects. </li>
+                	   </ul>
+                    </section>
 
                 	<section>
                 		<h5 style="color:#85335c"> Push based </h5>
-                		<p> Changes are triggered by the central manager. </p>
-                		<p> Intension or workflow is propageted to the managed objects. </p>
-                		<p> Change results are brought back for the automation engine to react on. </p>
-                		<p></p>
-                		<p> More complex central engine, but state is central (in one place) </p>
-                	</section>
+                        <ul>
+                    		<li class="fragment"> Changes are triggered by the central manager. </li>
+                    		<li class="fragment"> Intension or workflow is propagated to the managed objects. </li>
+                    		<li class="fragment"> Change results are brought back to the automation engine. </li>
+                    		<li class="fragment"> More complex central engine, but state is central (in one place). </li>
+                            <li class="fragment"> State knowledge is updated based on a schedule (vs event driven). </li>
+                            <li class="fragment"> Performance depends on the scalability of the controller. </li>
+                	   </ul>
+                    </section>
 
                 	<section>
                 		<h5 style="color:#85335c"> Pull based </h5>
+                        <ul>
+                            <li class="fragment"> Changes are triggered by the managed object (it's automation agent). </li>
+                            <li class="fragment"> Intension or workflow is downloaded from the central point. </li>
+                            <li class="fragment"> Change results are (optionaly) brought back to the center. </li>
+                            <li class="fragment"> State and implementation know-how is distributed. </li>
+                            <li class="fragment"> State can be monitored more closely because of agents proximity. </li>
+                            <li class="fragment"> Performance is more scalable. </li>
+                        </ul>
                 	</section>
 
                 </section>
 
-                <!-- Imperative Automation -->
-                <section>Slide 2</section>
-
-                <!-- Declarative Automation -->
-                <section>Slide 2</section>
-
+                
                 <!-- Configuration data for Automation -->
-                <section>Slide 2</section>
+                <section>
 
+                    <section>
+                        <h5 style="color:#85335c"> Parametrized configuration </h5>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Data formating </h5>
+                        <ul>
+                            <li><a href="https://yaml.org/start.html"> YAML </a></li> 
+                            <li><a href="https://www.json.org/json-en.html"> JSON </a></li>
+                            <li><a href="https://www.w3.org/XML/"> XML </a></li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Data formating: source configuration </h5>
+                        <pre data-id="code-animation"><code class="plaintext" data-trim data-line-numbers>
+                            interface Ethernet1/1
+                              description Some descriptive text
+                              switchport
+                              switchport mode trunk
+                              switchport trunk allowed vlan 4012-4013
+                              no shutdown
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Data formating: YAML </h5>
+                        <pre data-id="code-animation"><code class="yaml" data-trim data-line-numbers>
+                            ---
+                              name: Ethernet 1/1
+                              description: Some descriptive text
+                              swithport: true
+                              switchport_mode: trunk
+                              allowed_vlans:
+                                - 4012
+                                - 4013
+                              shutdown: false
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Data formating: JSON </h5>
+                        <pre data-id="code-animation"><code class="json" data-trim data-line-numbers>
+                            {
+                                "name": "Ethernet 1/1",
+                                "description": "Some descriptive text",
+                                "swithport": true,
+                                "switchport_mode": "trunk",
+                                "allowed_vlans": [
+                                   4012,
+                                   4013
+                                ],
+                                "shutdown": false
+                            }
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Data formating: XML </h5>
+                        <pre data-id="code-animation"><code class="xml" data-trim data-line-numbers>
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <root>
+                               <allowed_vlans>
+                                  <vlan>4012</vlan>
+                                  <vlan>4013</vlan>
+                               </allowed_vlans>
+                               <description>Some descriptive text</description>
+                               <name>Ethernet 1/1</name>
+                               <shutdown>false</shutdown>
+                               <swithport>true</swithport>
+                               <swithport_mode>trunk</swithport_mode>
+                            </root>
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Templating </h5>
+                        <pre data-id="code-animation"><code class="jinja" data-trim data-line-numbers>
+                            interface {{ name }}
+                              description {{ description }}
+                            {% if switchport %}
+                              switchport
+                              {% if switchport_mode == "trunk" %}
+                              switchport mode {{ swithport_mode }}
+                              switchport trunk allowed vlan none
+                                {% for vlan in allowed_vlans %}
+                              switchport trunk allowed vlan add {{ vlan }}
+                                {% endfor %}
+                              {% endif %}
+                            {% endif %}
+                            {% if shutdown %}
+                              no shutdown
+                             {% endif %}
+                        </code></pre>
+                    </section>
+
+                    <section data-background-iframe="https://cryptic-cliffs-32040.herokuapp.com/" data-background-interactive>
+                        <h2>Let's test</h2>
+                        
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Configuration models </h5>
+                        <p><a href="https://tools.ietf.org/html/rfc6020">YANG</a> - A Data Modeling Language for the Network Configuration Protocol (NETCONF) </p>
+                    </section>
+
+                    <section>
+                    <pre data-id="code-animation"><code class="plaintext" data-trim>
+                        +--rw interfaces
+                              | +--rw interface* [name]
+                              | +--rw name string
+                              | +--rw description? string
+                              | +--rw type identityref
+                              | +--rw enabled? boolean
+                    </code></pre>
+                    Full model in <a href="https://yangcatalog.org/yang-search/yang_tree/ietf-interfaces@2018-02-20">Yang catalog</a>
+                    </section>
+                    
+                    <section>
+                        <img src="images/yang_one_picture.png" alt="YANG usage">
+                        <p> Source: <a href="https://blogs.cisco.com/developer/coding-essentials-netdevops-part-4"> Cisco blogs </a></p>
+                    </section>
+
+                </section>
+                <!-- Storing data for automation -->
+                <section>   
+                    
+                    <section>
+                        <h5 style="color:#85335c"> Managing structured data for automation </h5>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Source of Truth </h5>
+                        <p> Traditionally state and "the truth" was derived from the network device </p>
+                        <ul>
+                            <li class="fragment"> Text file (+- SCM)</li>
+                            <li class="fragment"> Table (worksheet/excel) </li>
+                            <li class="fragment"> Database (+- application) </li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <!-- Usuall suspects for automation tooling -->
+                <section>   
+                    
+                    <section>
+                        <h4 style="color:#85335c"> (Network) infrastructure automation tools </h4>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Ansible </h5>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Salt </h5>    
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Puppet </h5>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Chef </h5>   
+                    </section>
+
+
+
+                </section>
                 <!-- Links -->
                 <section>
                     <p style="color:#85335c">Links for thurther development</p>
@@ -144,6 +356,10 @@
                             <p>All Cisco things related to software development, programatic integration and autmation.</p>
                         </section>
                         <section>
+                            <a href="https://blogs.cisco.com/developer/netdevops-part-1"> NetDevOps Series 1-19 </a>
+                            <p>A series of blogs introducing various aspects of network programability topics by Julio Gomez</p>
+                        </section>
+                        <section>
                             <a href="https://nrelabs.io/"> NRE (Network Reliability Engineer) Labs</a>
                             <p>Short, simple, browser-based examples covering fundamentals and examples. I’d recommend not moving onto any others until you’ve done all the lessons offered.</p>
                         </section>
@@ -153,6 +369,24 @@
 
                         </section>
                 </section>
+
+                <!-- Practice LAB -->
+                <section>
+
+                    <section>
+                        <h3 style="color:#85335c"> Network Automation Lab </h3>
+                    </section>
+                
+                    <section>
+                        <h5 style="color:#85335c"> Agenda (Practice) </h5>
+                        <ul>
+                            <li> Environment </li>
+                            <li> Lab devices </li>
+                            <li> Framework - Ansible </li>
+                            <li> Programatic - Netmiko </li>
+                            <li> API - NXAPI </li>
+                        </ul>
+                    </section>
             </div>
         </div>
 
