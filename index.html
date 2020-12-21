@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Network Automation Intro</title>
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Opening slides -->
+                <section>
+                
+                    <section>
+                        <h3 style="color:#85335c"> Network Automation Intro </h3>
+                    </section>
+                
+                    <section>
+                        <h3 style="color:#85335c"> Agenda (Theory) </h3>
+                        <ul>
+                            <li>Idea</li>
+                            <li>Paradigms</li>
+                            <li>Patterns</li>
+                            <li>Imperative Automation</li>
+                            <li>Declarative Automation</li>
+                            <li>Managing configuration data</li>
+                        </ul>
+                    </section>
+                
+                </section>
+                <!-- Automation Ideas -->
+                <section>
+                
+                    <section>
+                        <p style="color:#85335c"> Ideas that power automation </p>
+                    </section>
+                
+                    <section>
+                    	<p style="color:#85335c"> Ideas that power automation </p>
+                    	<ul>
+	                        <li> Growth of connectivity </li>
+	                        <li class="fragment"> Requirement for higher quality </li>
+	                        <li class="fragment"> Standartization </li>
+	                        <li class="fragment"> Process robotization </li>
+	                        <li class="fragment"> Decrease of cost </li>
+	                    </ul>
+                	</section>
+                    
+                    <section>
+                        <a href="https://revealjs.com">
+                            <img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+                        </a>
+                        <h3>The HTML Presentation Framework</h3>
+                    </section>
+                
+                </section>
+                <!-- Automation Paradigms -->
+                <section>
+                
+                    <section>
+                        <p style="color:#85335c"> Automation paradigms </p>
+                    </section>
+                
+                    <section>
+                        <p style="color:#85335c"> Declarative/Model-Based Automation </p>
+                        <p> Emphasis on what to do (model), not on how to do (instructions). </p>
+                        <p> Driven by data that defines desired state. </p>
+                        <p> Possible states are modeled. </p>
+                        <p> Intension is declared. </p>
+                        <p> Resulting state is verified. </p>
+                    </section>
+                    
+                    <section>
+                        <p style="color:#85335c"> Imperative </p>
+                        <p> Emphasis on what changes must be done to reach desired outcomes (instructions). </p>
+                        <p> Workflow (instructions) are developed for possible outcomes. </p>
+                        <p> Workflow is initiated </p>
+                        <p> Tasks are completed sequentialy. </p>
+                        <p> Resulting state is verified. </p>
+                    </section>
+                
+                </section>
+                <!-- Automation Patterns -->
+                <section>
+                	<section>
+                	    <h5 style="color:#85335c"> Automation patterns </h5>
+                	</section>
+
+                	<section>
+                		<h5 style="color:#85335c"> Toplogy </h5>
+                		<p> The automation topology is almost always star shaped. </p>
+                        <p> Center - control and automation engine. </p>
+                        <p> Bundled with data that is needed to define tasks and state. </p>
+                        <p> Spokes - managed objects or automation agents parralel to the managed objects. </p>
+                	</section>
+
+                	<section>
+                		<h5 style="color:#85335c"> Push based </h5>
+                		<p> Changes are triggered by the central manager. </p>
+                		<p> Intension or workflow is propageted to the managed objects. </p>
+                		<p> Change results are brought back for the automation engine to react on. </p>
+                		<p></p>
+                		<p> More complex central engine, but state is central (in one place) </p>
+                	</section>
+
+                	<section>
+                		<h5 style="color:#85335c"> Pull based </h5>
+                	</section>
+
+                </section>
+
+                <!-- Imperative Automation -->
+                <section>Slide 2</section>
+
+                <!-- Declarative Automation -->
+                <section>Slide 2</section>
+
+                <!-- Configuration data for Automation -->
+                <section>Slide 2</section>
+
+                <!-- Links -->
+                <section>
+                    <p style="color:#85335c">Links for thurther development</p>
+                        <section>
+                        </section>
+                        <section>
+                            <a href="https://github.com/networktocode/awesome-network-automation"> Awesome Network Automation List </a>
+                            <p>This page is maintained by the team at Network to Code and has links to numerous resources and anything you could think of related to network automation.</p>
+                        </section>
+                        <section>
+                            <a href="https://pynet.twb-tech.com/email-signup.html"> Python for Network Engineers - Free Course</a>
+                            <p>This course from Kirk Byers offers free training on Python, using specific examples relevant to Python. Kirk is the maintainer of Netmiko and is a core contributor on many open source network modules.</p>
+                        </section>
+                        <section>
+                            <a href="https://developer.cisco.com/"> DevNet - Cisco</a>
+                            <p>All Cisco things related to software development, programatic integration and autmation.</p>
+                        </section>
+                        <section>
+                            <a href="https://nrelabs.io/"> NRE (Network Reliability Engineer) Labs</a>
+                            <p>Short, simple, browser-based examples covering fundamentals and examples. I’d recommend not moving onto any others until you’ve done all the lessons offered.</p>
+                        </section>
+                        <section>
+                            <a href="https://networktocode.slack.com/"> Network to Code - Slack</a>
+                            <p>A Slack workspace for the network automation community, hosted by Network to Code. There are numerous channels and hundreds of people on this workspace contributing and helping others.</p>
+
+                        </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>
