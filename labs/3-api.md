@@ -12,7 +12,7 @@ NXAPI Ports: 80 (http) & 443 (HTTPS)
 RESTCONF Port : 443 (HTTPS)
 Credentials: 
     Username: admin
-	Password: Admin_1234!
+    Password: Admin_1234!
 ```
 <a href="https://sbx-nxos-mgmt.cisco.com" target="_blank">Nexus 9000 API sandbox</a>
 
