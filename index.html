@@ -509,9 +509,78 @@
 
                     <section>
                         <h5 style="color:#85335c"> Instructions </h5>
-                        <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/1-ansible.md">My first Ansible playbook</a></p>
+                        <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/1-ansible.md" target="_blank">My first Ansible playbook</a></p>
                     </section>
 
+                    <section>
+                        <h5 style="color:#85335c"> Playbook </h5>
+                        <pre class="fragment" data-id="code-animation"><code class="yaml" data-trim>
+                        ---
+                        - name: First playbook
+                          hosts: N5K-1
+                          gather_facts: false
+                          connection: network_cli
+
+                          tasks:
+
+                          - name: Ping module
+                            cisco.nxos.nxos_ping:
+                              dest: 192.168.227.51
+                              vrf: management
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Additional tasks </h5>
+                        <ul>
+                            <li> Test other modules: vlans, static routes, facts </li>
+                            <li> Move arguments to host variables </li>
+                            <li> Extend playbook with multiple plays in a planned sequence </li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <!-- Python -->
+                <section>
+
+                    <section>
+                        <h4 style="color:#85335c"> Native Python automation </h4>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Netmiko library </h5>
+                        <p>The purposes of this library are the following:</p>
+                        <ul>
+                            <li> Successfully establish an SSH connection to the device </li>
+                            <li> Simplify the execution of show commands and the retrieval of output data </li>
+                            <li> Simplify execution of configuration commands including possibly commit actions </li>
+                            <li> Do the above across a broad set of networking vendors and platforms </li>
+                        </ul>
+                        <p><a href="https://pynet.twb-tech.com/blog/automation/netmiko.html">Official introduction</a></p>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> SDK </h5>
+                        <p>Software Development Kit</p>
+                        <ul>
+                            <li> Enables/simplifies programming by providing usefull tools</li>
+                            <li> Makes device management interface consumable with a programming language </li>
+                            <li> Examples: <a href="https://developer.cisco.com/docs/nx-os/#!cisco-nexus-9000-series-python-sdk-user-guide-and-api-reference">Python SDK for NX-OS</a>, <a href="https://developer.cisco.com/site/ydk/">Y(ANG)DK</a><</li>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Instructions </h5>
+                        <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/2-python.md" target="_blank">My first automation program</a></p>
+                    </section>
+
+                </section>
+
+
+                <!-- API -->
+                <section>
+
+                </section>
 
             </div>
         </div>

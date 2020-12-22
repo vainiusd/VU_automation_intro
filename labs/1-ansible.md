@@ -1,11 +1,14 @@
-## Ansible introduction
+# Ansible introduction
 
 In this lab we will install ansible, prepare required files for running and run introductionary ansible playbooks against Nexus switches.
+
+## Ansible installation
 
 ### Create python environment
 
 Commands:
 ```
+cd ~
 pwd
 mkdir auto_lab
 cd auto_lab/
@@ -15,6 +18,7 @@ source env/bin/activate
 ```
 Example output:
 ```
+[stud1@netauto ~]$ cd ~
 [stud1@netauto ~]$ pwd
 /home/stud1
 [stud1@netauto ~]$ mkdir auto_lab
@@ -26,7 +30,7 @@ Example output:
 ```
 
 Verify that Your environment is active:
-1. bash prompt starts with environment name "(env)"
+1. Bash prompt starts with environment name "(env)"
 2. Python binary is located in environment's bin directory
 
 ```
@@ -42,6 +46,7 @@ Verify that Your environment is active:
 Commands:
 ```
 python3 -m pip install ansible
+python3 -m pip install paramiko
 ansible --version
 ansible-galaxy collection install cisco.nxos
 ansible-doc cisco.nxos.nxos_vlans
@@ -90,14 +95,139 @@ ansible.netcommon (1.4.1) was installed successfully
   ... Omitting output ...
 ```
 
-### Configure ansible
+## Ansible configuration
 
 1. Configuration file
 2. Inventory
 3. Credentials
 4. Test
 
-### My first networking playbook
+
+#### Configuration file
+
+```
+cat <<'EOF' >> ansible.cfg
+[defaults]
+inventory = ~/auto_lab/hosts
+host_key_checking = False
+interpreter_python = auto
+EOF
+```
+
+#### Inventory
+
+Inventory is ansible's source of information about all managed devices. <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#intro-inventory"> Documentation </a>
+
+List of devices and their localy significant names:
+```
+cat <<'EOF' >> hosts
+all:
+  hosts:
+    N5K-1:
+      ansible_host: 192.168.227.51
+    N5K-2:
+      ansible_host: 192.168.227.52
+    N7K-1:
+      ansible_host: 192.168.227.71
+    N7K-2:
+      ansible_host: 192.168.227.72
+EOF
+```
+
+Verify that Ansible inventory is parsed successfully:
+```
+ansible-inventory --list -i hosts
+```
+Expected output:
+```
+{
+    "_meta": {
+        "hostvars": {
+            "N5K-1": {
+                "ansible_host": "192.168.227.51"
+            },
+            "N5K-2": {
+                "ansible_host": "192.168.227.52"
+            },
+            "N7K-1": {
+                "ansible_host": "192.168.227.71"
+            },
+            "N7K-2": {
+                "ansible_host": "192.168.227.72"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "N5K-1",
+            "N5K-2",
+            "N7K-1",
+            "N7K-2"
+        ]
+    }
+}
+```
+
+#### Credentials
+
+Since all devices have the same credentials, they can be defined in one place:
+```
+mkdir group_vars
+cat <<'EOF' >> group_vars/all.yml
+ansible_user: lab
+ansible_password: cisco
+ansible_network_os: nxos
+EOF
+```
+
+#### Testing
+Test ansible against one of the devices with and ad-hoc command:
+```
+ansible N5K-1 -c network_cli -i hosts -m nxos_ping -a "dest=192.168.227.51 vrf=management"
+```
+More about ansible ad-hoc commands <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html">here</a>.
+
+
+## My first ansible playbook
+
+Playbook is the state definition file that describes automation intention.
+
+We are using Cisco NX-OS ansible module:
+
+1. All NX-OS modules in cisco.nxos collection: <a href="https://galaxy.ansible.com/cisco/nxos">link</a>
+2. Example module documentation (vlan creation) is <a href="https://docs.ansible.com/ansible/2.10/collections/cisco/nxos/nxos_vlans_module.html">here</a>
+3. More about playbooks can be found <a href="https://docs.ansible.com/ansible/2.10/collections/cisco/nxos/nxos_vlans_module.html">here</a>
+
+Let's go!
+
+```
+cat <<'EOF' >> play.yml
+---
+- name: First playbook
+  hosts: N5K-1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+  - name: Ping self
+    cisco.nxos.nxos_ping:
+      dest: 192.168.227.51
+      vrf: management
+```
+
+And run the playbook:
+```
+ansible-playbook play.yml
+```
+
+
+
 
 
 
