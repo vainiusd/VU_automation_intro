@@ -1,6 +1,6 @@
 # Netmiko introduction
 
-In this lab we will install netmiko and run use this python library to connect adn configure devices.
+In this lab we will install netmiko and run use this python library to connect and configure devices.
 
 ## Netmiko installation
 
