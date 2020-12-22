@@ -14,7 +14,7 @@ Credentials:
     Username: admin
 	Password: Admin_1234!
 ```
-<a href="https://sbx-nxos-mgmt.cisco.com">Nexus 9000 API sandbox</a>
+<a href="https://sbx-nxos-mgmt.cisco.com" target="_blank">Nexus 9000 API sandbox</a>
 
 ### Testing operational commands in sandbox
 
