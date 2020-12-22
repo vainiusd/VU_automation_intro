@@ -293,7 +293,7 @@
                     </section>
 
                 </section>
-                <!-- Storing data for automation -->
+                <!-- Collecting and storing data for automation -->
                 <section>   
                     
                     <section>
@@ -304,9 +304,36 @@
                         <h5 style="color:#85335c"> Source of Truth </h5>
                         <p> Traditionally state and "the truth" was derived from the network device </p>
                         <ul>
-                            <li class="fragment"> Text file (+- SCM)</li>
-                            <li class="fragment"> Table (worksheet/excel) </li>
-                            <li class="fragment"> Database (+- application) </li>
+                            <li class="fragment"> Text file (+- SCM). </li>
+                            <li class="fragment"> Table (worksheet/excel). </li>
+                            <li class="fragment"> Database (+- application). </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Unstructured data </h5>
+                        <p> Network configuration representation is usually unstructured. </p>
+                        <ul>
+                            <li class="fragment"> State is modeled in the device <a href="https://developer.cisco.com/docs/nx-os/#!everything-is-an-object">(NXOS object model)</a>. </li>
+                            <li class="fragment"> State queried by CLI. </li>
+                            <li class="fragment"> State presented as human readable text. </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img src="images/nxos_prog_stack.png" alt="NXOS programability options">
+                        <p> Source: <a href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/programmability/guide/b_Cisco_Nexus_9000_Series_NX-OS_Programmability_Guide_7x/b_Cisco_Nexus_9000_Series_NX-OS_Programmability_Guide_7x_chapter_010011.html"> NXOS config guide </a> <a href="https://developer.cisco.com/learning/tracks/nxos-programmability">learning link</a></p>
+
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Structuring unstructured data </h5>
+                        <p> Layer converting unstructured data to other data representation forms. </p>
+                        <ul>
+                            <li class="fragment"><a href="https://pynet.twb-tech.com/blog/python/textfsm.html"> TextFSM </a></li>
+                            <li class="fragment"><a href="https://developer.cisco.com/docs/pyats/#!introduction/cisco-pyats-network-test--automation-solution"> Genie/PyATS </a></li>
+                            <li class="fragment"><a href="https://ttp.readthedocs.io/en/latest/"> Template text parser (TTP) </a></li>
+                            <li class="fragment"> Regular Expresions (regex) </li>
                         </ul>
                     </section>
 
@@ -321,18 +348,27 @@
 
                     <section>
                         <h5 style="color:#85335c"> Ansible </h5>
+                        <img src="images/ansible_high_level.png" alt="Ansible architecture">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Salt </h5>    
+                        <h5 style="color:#85335c"> Salt </h5> 
+                        <img src="images/salt_high_level.png" alt="Salt architecture">   
                     </section>
 
                     <section>
                         <h5 style="color:#85335c"> Puppet </h5>
+                        <img src="images/puppet_run.png" alt="Puppet run overview">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Chef </h5>   
+                        <h5 style="color:#85335c"> Chef </h5>
+                        <img src="images/chef-architecture.png" alt="Chef architecture">   
+                    </section>
+
+                    <section>
+                        <h5 style="color:#85335c"> Terraform </h5>
+                        <img src="images/terraform_workflow.png" alt="Terraform workflow">  
                     </section>
 
 
@@ -353,7 +389,7 @@
                         </section>
                         <section>
                             <a href="https://developer.cisco.com/"> DevNet - Cisco</a>
-                            <p>All Cisco things related to software development, programatic integration and autmation.</p>
+                            <p>All Cisco things related to software development, programmable integration and autmation.</p>
                         </section>
                         <section>
                             <a href="https://blogs.cisco.com/developer/netdevops-part-1"> NetDevOps Series 1-19 </a>
