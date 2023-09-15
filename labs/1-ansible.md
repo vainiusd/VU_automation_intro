@@ -13,7 +13,7 @@ pwd
 mkdir auto_lab
 cd auto_lab/
 mkdir env
-python3 -m venv env
+python3 -m venv env --prompt auto-lab
 source env/bin/activate
 ```
 Example output:
@@ -23,20 +23,20 @@ Example output:
 /home/stud1
 [stud1@netauto ~]$ mkdir auto_lab
 [stud1@netauto ~]$ cd auto_lab/
-[stud1@netauto ~]$ mkdir env
-[stud1@netauto auto_lab]$ python3 -m venv .
+[stud1@netauto auto_lab]$ mkdir env
+[stud1@netauto auto_lab]$ python3 -m venv env --prompt auto-lab
 [stud1@netauto auto_lab]$ source env/bin/activate
-(env) [stud1@netauto auto_lab]$
+(auto-lab) [stud1@netauto auto_lab]$
 ```
 
 Verify that Your environment is active:
-1. Bash prompt starts with environment name "(env)"
+1. Bash prompt starts with environment name "(auto-lab)"
 2. Python binary is located in environment's bin directory
 
 ```
-(env) [stud1@netauto auto_lab]$ which python3
-~/auto_lab/env/bin/python3
-(env) [stud1@netauto auto_lab]$ deactivate 
+(auto-lab) [stud1@netauto auto_lab]$ which python3
+/home/stud1/auto_lab/env/bin/python3
+(auto-lab) [stud1@netauto auto_lab]$ deactivate 
 [stud1@netauto auto_lab]$ which python3
 /usr/bin/python3
 ```
