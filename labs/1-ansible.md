@@ -16,7 +16,6 @@ mkdir env
 python3 -m venv env --prompt auto-lab
 source env/bin/activate
 python3 -m pip install -U pip
-
 ```
 Example output:
 ```
@@ -49,6 +48,7 @@ Verify that Your environment is active:
 Commands:
 ```
 python3 -m pip install ansible
+python3 -m pip install ansible-pylibssh
 python3 -m pip install paramiko
 ansible --version
 ansible-galaxy collection install cisco.nxos
@@ -109,7 +109,7 @@ ansible.netcommon (1.4.1) was installed successfully
 #### Configuration file
 
 ```
-cat <<'EOF' >> ansible.cfg
+cat <<'EOF' > ansible.cfg
 [defaults]
 inventory = ~/auto_lab/hosts
 host_key_checking = False
@@ -123,40 +123,28 @@ Inventory is ansible's source of information about all managed devices. <a href=
 
 List of devices and their localy significant names:
 ```
-cat <<'EOF' >> hosts
-all:
+cat <<'EOF' > hosts
+ungrouped:
   hosts:
-    N5K-1:
-      ansible_host: 192.168.227.51
-    N5K-2:
-      ansible_host: 192.168.227.52
-    N7K-1:
-      ansible_host: 192.168.227.71
-    N7K-2:
-      ansible_host: 192.168.227.72
+    N9K-1:
+      ansible_host: 192.168.227.91
 EOF
 ```
 
 Verify that Ansible inventory is parsed successfully:
 ```
-ansible-inventory --list -i hosts
+ansible-inventory --list
+ansible-inventory --list -i ./hosts
 ```
+What does flag `-i` mean and why can we omit it?
+
 Expected output:
 ```
 {
     "_meta": {
         "hostvars": {
-            "N5K-1": {
-                "ansible_host": "192.168.227.51"
-            },
-            "N5K-2": {
-                "ansible_host": "192.168.227.52"
-            },
-            "N7K-1": {
-                "ansible_host": "192.168.227.71"
-            },
-            "N7K-2": {
-                "ansible_host": "192.168.227.72"
+            "N9K-1": {
+                "ansible_host": "192.168.227.91"
             }
         }
     },
@@ -167,10 +155,7 @@ Expected output:
     },
     "ungrouped": {
         "hosts": [
-            "N5K-1",
-            "N5K-2",
-            "N7K-1",
-            "N7K-2"
+            "N9K-1"
         ]
     }
 }
@@ -181,9 +166,9 @@ Expected output:
 Since all devices have the same credentials, they can be defined in one place:
 ```
 mkdir group_vars
-cat <<'EOF' >> group_vars/all.yml
-ansible_user: lab
-ansible_password: cisco
+cat <<'EOF' > group_vars/all.yml
+ansible_user: admin
+ansible_password: Cisco12345
 ansible_network_os: nxos
 EOF
 ```
@@ -191,9 +176,10 @@ EOF
 #### Testing
 Test ansible against one of the devices with and ad-hoc command:
 ```
-ansible N5K-1 -c network_cli -i hosts -m nxos_ping -a "dest=192.168.227.51 vrf=management"
+ansible all -c network_cli -m cisco.nxos.nxos_ping -a "dest=192.168.227.91 vrf=management"
 ```
 More about ansible ad-hoc commands <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html">here</a>.
+More about ansible module nxos_ping: `ansible-doc cisco.nxos.nxos_ping`
 
 
 ## My first ansible playbook
@@ -209,10 +195,10 @@ We are using Cisco NX-OS ansible module:
 Let's go!
 
 ```
-cat <<'EOF' >> play.yml
+cat <<'EOF' > playbook.yml
 ---
 - name: First playbook
-  hosts: N5K-1
+  hosts: N9K-1
   gather_facts: false
   connection: network_cli
 
@@ -220,13 +206,19 @@ cat <<'EOF' >> play.yml
 
   - name: Ping self
     cisco.nxos.nxos_ping:
-      dest: 192.168.227.51
+      dest: 192.168.227.91
       vrf: management
+EOF
 ```
 
 And run the playbook:
 ```
-ansible-playbook play.yml
+ansible-playbook playbook.yml
+```
+Read the output - what can You say from it?
+Run the playbook in verbose mode:
+```
+ansible-playbook -v playbook.yml
 ```
 
 
