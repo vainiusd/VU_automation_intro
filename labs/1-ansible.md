@@ -15,6 +15,8 @@ cd auto_lab/
 mkdir env
 python3 -m venv env --prompt auto-lab
 source env/bin/activate
+python3 -m pip install -U pip
+
 ```
 Example output:
 ```
@@ -27,6 +29,7 @@ Example output:
 [stud1@netauto auto_lab]$ python3 -m venv env --prompt auto-lab
 [stud1@netauto auto_lab]$ source env/bin/activate
 (auto-lab) [stud1@netauto auto_lab]$
+(auto-lab) [stud1@netauto auto_lab]$ python3 -m pip install -U pip
 ```
 
 Verify that Your environment is active:
