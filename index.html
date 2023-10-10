@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="dist/reset.css">
         <link rel="stylesheet" href="dist/reveal.css">
-        <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -20,11 +20,11 @@
                 <section>
                 
                     <section>
-                        <h3 style="color:#85335c"> Network Automation Intro </h3>
+                        <h2 style="color:#7b0b44"> Network Automation Intro </h2>
                     </section>
                 
                     <section>
-                        <h5 style="color:#85335c"> Agenda (Theory) </h5>
+                        <h3 style="color:#7b0b44"> Agenda </h3>
                         <ul>
                             <li> Idea </li>
                             <li> Terms </li>
@@ -40,17 +40,17 @@
                 <section>
                 
                     <section>
-                        <h4 style="color:#85335c"> Ideas that power automation </h4>
+                        <h3 style="color:#7b0b44"> Ideas that power automation </h3>
                     </section>
                 
                     <section>
-                    	<h5 style="color:#85335c"> Ideas that power automation </h5>
-                    	<ul>
-	                        <li> Growth of connectivity </li>
-	                        <li class="fragment"> Requirement for higher quality </li>
-	                        <li class="fragment"> Standartization </li>
-	                        <li class="fragment"> Process robotization </li>
-	                        <li class="fragment"> Decrease of cost </li>
+                        <h4 style="color:#7b0b44"> Ideas that power automation </h4>
+                        <ul>
+                            <li> Growth of connectivity </li>
+                            <li class="fragment"> Process robotization </li>
+                            <li class="fragment"> Standartization </li>
+                            <li class="fragment"> Market competition</li>
+                            <li class="fragment"> Operational/maintenance costs</li>
 	                    </ul>
                 	</section>
                 
@@ -64,28 +64,28 @@
                 <section>
 
                     <section>
-                        <h4 style="color:#85335c"> Automation terminology </h4>
+                        <h4 style="color:#7b0b44"> Automation terminology </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Orchestration </h5>
+                        <h5 style="color:#7b0b44"> Orchestration </h5>
                         <p> Controling task execution and managing workflow sequence. </p>
                         <p> Especially important when end result has dependencies between separate systems </p>
                     </section>
                         
                     <section>
-                        <h5 style="color:#85335c"> Instruction-set </h5>
+                        <h5 style="color:#7b0b44"> Instruction-set </h5>
                         <p> Ordered sequence of tasks (commands, calls or any  other type of actions). </p>
                         <p> Strictly formed according to the managed system's needs. </p>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> State </h5>
+                        <h5 style="color:#7b0b44"> State </h5>
                         <p> Device or service configuration/operational status that fulfills defined requirements. </p>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Indempotency </h5>
+                        <h5 style="color:#7b0b44"> Indempotency </h5>
                         <p> Ability to evaluate state and execute actions only when a change to current state is needed. </p>
                         <p> Idempotent operation is one that has no additional effect if it is called more than once with the same input parameters. </p>
                     </section>
@@ -96,11 +96,11 @@
                 <section>
                 
                     <section>
-                        <h4 style="color:#85335c"> Automation paradigms </h4>
+                        <h4 style="color:#7b0b44"> Automation paradigms </h4>
                     </section>
                 
                     <section>
-                        <h5 style="color:#85335c"> Declarative </h5>
+                        <h5 style="color:#7b0b44"> Declarative </h5>
                         <ul>
                             <li class="fragment"> Emphasis on what to do (model), not on how to do (instructions). </li>
                             <li class="fragment"> Driven by data that defines desired state. </li>
@@ -111,12 +111,12 @@
                     </section>
                     
                     <section>
-                        <h5 style="color:#85335c"> Imperative </h5>
+                        <h5 style="color:#7b0b44"> Imperative </h5>
                         <ul>
                             <li class="fragment"> Emphasis on what changes must be done to reach desired outcomes (instructions). </li>
-                            <li class="fragment"> Workflow (instructions) are developed for possible outcomes. </li>
+                            <li class="fragment"> Workflow (instruction-set) is developed for possible outcomes. </li>
                             <li class="fragment"> Workflow is initiated. </li>
-                            <li class="fragment"> Tasks are completed sequentialy. </li>
+                            <li class="fragment"> Instructions are completed sequentialy. </li>
                             <li class="fragment"> Resulting state is verified. </li>
                         </ul>
                     </section>
@@ -125,11 +125,11 @@
                 <!-- Automation Patterns -->
                 <section>
                 	<section>
-                	    <h4 style="color:#85335c"> Automation patterns </h4>
+                	    <h4 style="color:#7b0b44"> Automation patterns </h4>
                 	</section>
 
                 	<section>
-                		<h5 style="color:#85335c"> Topology </h5>
+                		<h5 style="color:#7b0b44"> Topology </h5>
                     	<ul>
                         	<li class="fragment"> The automation topology is star shaped. </li>
                             <li class="fragment"> Center - control and automation engine. </li>
@@ -138,11 +138,15 @@
                 	   </ul>
                     </section>
 
+                    <section>
+                        <img src="images/topology.svg" alt="Topology">
+                    </section>
+
                 	<section>
-                		<h5 style="color:#85335c"> Push based </h5>
+                		<h5 style="color:#7b0b44"> Push based </h5>
                         <ul>
                     		<li class="fragment"> Changes are triggered by the central manager. </li>
-                    		<li class="fragment"> Intension or workflow is propagated to the managed objects. </li>
+                    		<li class="fragment"> Intention or workflow is propagated to the managed objects. </li>
                     		<li class="fragment"> Change results are brought back to the automation engine. </li>
                     		<li class="fragment"> More complex central engine, but state is central (in one place). </li>
                             <li class="fragment"> State knowledge is updated based on a schedule (vs event driven). </li>
@@ -150,17 +154,25 @@
                 	   </ul>
                     </section>
 
+                    <section>
+                        <img src="images/push.svg" alt="Topology">
+                    </section>
+
                 	<section>
-                		<h5 style="color:#85335c"> Pull based </h5>
+                		<h5 style="color:#7b0b44"> Pull based </h5>
                         <ul>
                             <li class="fragment"> Changes are triggered by the managed object (it's automation agent). </li>
-                            <li class="fragment"> Intension or workflow is downloaded from the central point. </li>
+                            <li class="fragment"> Intention or workflow is downloaded from the central point. </li>
                             <li class="fragment"> Change results are (optionaly) brought back to the center. </li>
                             <li class="fragment"> State and implementation know-how is distributed. </li>
                             <li class="fragment"> State can be monitored more closely because of agents proximity. </li>
                             <li class="fragment"> Performance is more scalable. </li>
                         </ul>
                 	</section>
+
+                    <section>
+                        <img src="images/pull.svg" alt="Topology">
+                    </section>
 
                 </section>
 
@@ -169,12 +181,22 @@
                 <section>
 
                     <section>
-                        <h5 style="color:#85335c"> Parametrized configuration </h5>
+                        <h5 style="color:#7b0b44"> Parametrized configuration </h5>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Data formating </h5>
+                        <h5 style="color:#7b0b44"> Configuration data _________</h5>
                         <ul>
+                            <li>Formating</li> 
+                            <li>Templating</li>
+                            <li>Modeling</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h5 style="color:#7b0b44"> Data formating </h5>
+                        <ul>
+                            <li><a href="https://netcraftsmen.com/the-history-of-the-cisco-cli/"> Original </a></li> 
                             <li><a href="https://yaml.org/start.html"> YAML </a></li> 
                             <li><a href="https://www.json.org/json-en.html"> JSON </a></li>
                             <li><a href="https://www.w3.org/XML/"> XML </a></li>
@@ -183,7 +205,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Data formating: source configuration </h5>
+                        <h5 style="color:#7b0b44"> Data formating: orignial configuration </h5>
                         <pre data-id="code-animation"><code class="plaintext" data-trim data-line-numbers>
                             interface Ethernet1/1
                               description Some descriptive text
@@ -195,23 +217,23 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Data formating: YAML </h5>
-                        <pre data-id="code-animation"><code class="yaml" data-trim data-line-numbers>
+                        <h5 style="color:#7b0b44"> Data formating: YAML </h5>
+                        <pre data-id="code-animation"><code class="yaml" data-trim>
                             ---
-                              name: Ethernet 1/1
-                              description: Some descriptive text
-                              swithport: true
-                              switchport_mode: trunk
-                              allowed_vlans:
-                                - 4012
-                                - 4013
-                              shutdown: false
+                            name: Ethernet 1/1
+                            description: Some descriptive text
+                            switchport: true
+                            switchport_mode: trunk
+                            allowed_vlans:
+                              - 4012
+                              - 4013
+                            shutdown: false
                     </code></pre>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Data formating: JSON </h5>
-                        <pre data-id="code-animation"><code class="json" data-trim data-line-numbers>
+                        <h5 style="color:#7b0b44"> Data formating: JSON </h5>
+                        <pre data-id="code-animation"><code class="json" data-trim>
                             {
                                 "name": "Ethernet 1/1",
                                 "description": "Some descriptive text",
@@ -227,8 +249,8 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Data formating: XML </h5>
-                        <pre data-id="code-animation"><code class="xml" data-trim data-line-numbers>
+                        <h5 style="color:#7b0b44"> Data formating: XML </h5>
+                        <pre data-id="code-animation"><code class="xml" data-trim>
                             <?xml version="1.0" encoding="UTF-8"?>
                             <root>
                                <allowed_vlans>
@@ -245,46 +267,75 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Templating </h5>
-                        <pre data-id="code-animation"><code class="jinja" data-trim data-line-numbers>
+                        <h5 style="color:#7b0b44"> Templating </h5>
+                        <pre data-id="code-animation"><code class="jinja" data-trim>
                             interface {{ name }}
                               description {{ description }}
                             {% if switchport %}
                               switchport
-                              {% if switchport_mode == "trunk" %}
-                              switchport mode {{ swithport_mode }}
+                            {% if switchport_mode == "trunk" %}
+                              switchport mode {{ switchport_mode }}
                               switchport trunk allowed vlan none
-                                {% for vlan in allowed_vlans %}
+                            {% for vlan in allowed_vlans %}
                               switchport trunk allowed vlan add {{ vlan }}
-                                {% endfor %}
-                              {% endif %}
+                            {% endfor %}
                             {% endif %}
-                            {% if shutdown %}
+                            {% endif %}
+                            {% if shutdown -%}
                               no shutdown
-                             {% endif %}
+                            {% endif -%}
                         </code></pre>
                     </section>
+<!-- COPY/PASTE snippets for test slide
+# DATA:
+---
+name: Ethernet 1/1
+description: Some descriptive text
+switchport: true
+switchport_mode: trunk
+allowed_vlans:
+    - 4012
+    - 4013
+shutdown: false
 
-                    <section data-background-iframe="https://cryptic-cliffs-32040.herokuapp.com/" data-background-interactive>
-                        <h2>Let's test</h2>
-                        
+{# TEMPLATE #}
+interface {{ name }}
+  description {{ description }}
+{% if switchport %}
+  switchport
+{% if switchport_mode == "trunk" %}
+  switchport mode {{ switchport_mode }}
+  switchport trunk allowed vlan none
+{% for vlan in allowed_vlans %}
+  switchport trunk allowed vlan add {{ vlan }}
+{% endfor %}
+{% endif %}
+{% endif %}
+{% if shutdown -%}
+  no shutdown
+{% endif -%}
+-->
+                    <section data-background-iframe="https://ansible.sivel.net/test/">
+                        <h5><a href="https://ansible.sivel.net/test/"> Let's test </a></h5>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Configuration models </h5>
+                        <h5 style="color:#7b0b44"> Configuration models </h5>
                         <p><a href="https://tools.ietf.org/html/rfc6020">YANG</a> - A Data Modeling Language for the Network Configuration Protocol (NETCONF) </p>
                     </section>
 
                     <section>
-                    <pre data-id="code-animation"><code class="plaintext" data-trim>
-                        +--rw interfaces
-                              | +--rw interface* [name]
-                              | +--rw name string
-                              | +--rw description? string
-                              | +--rw type identityref
-                              | +--rw enabled? boolean
-                    </code></pre>
-                    Full model in <a href="https://yangcatalog.org/yang-search/yang_tree/ietf-interfaces@2018-02-20">Yang catalog</a>
+                        <h5 style="color:#7b0b44"> IETF interfaces data model </h5>
+                        <pre data-id="code-animation"><code class="plaintext" data-trim>
+                            +--rw interfaces
+                                | +--rw interface* [name]
+                                | +--rw name string
+                                | +--rw description? string
+                                | +--rw type identityref
+                                | +--rw enabled? boolean
+                        </code></pre>
+                        <p>Model detlails can be found in <a href="https://yangcatalog.org/yang-search/module_details/ietf-interfaces">Yang catalog</a></p>
+                        <p>Model as an ASCII <a href="https://yangcatalog.org/api/services/tree/ietf-interfaces@2018-02-20.yang">tree</a></p>
                     </section>
                     
                     <section>
@@ -297,11 +348,11 @@
                 <section>   
                     
                     <section>
-                        <h5 style="color:#85335c"> Managing structured data for automation </h5>
+                        <h5 style="color:#7b0b44"> Managing structured data for automation </h5>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Source of Truth </h5>
+                        <h5 style="color:#7b0b44"> Source of Truth </h5>
                         <p> Traditionally state and "the truth" was derived from the network device </p>
                         <ul>
                             <li class="fragment"> Text file (+- SCM). </li>
@@ -311,7 +362,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Unstructured data </h5>
+                        <h5 style="color:#7b0b44"> Unstructured data </h5>
                         <p> Network configuration representation is usually unstructured. </p>
                         <ul>
                             <li class="fragment"> State is modeled in the device <a href="https://developer.cisco.com/docs/nx-os/#!everything-is-an-object">(NXOS object model)</a>. </li>
@@ -327,13 +378,13 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Structuring unstructured data </h5>
-                        <p> Layer converting unstructured data to other data representation forms. </p>
+                        <h5 style="color:#7b0b44"> Structuring unstructured data </h5>
+                        <p> An intermediate layer converting unstructured data to other (structured) data representation forms. </p>
                         <ul>
                             <li class="fragment"><a href="https://pynet.twb-tech.com/blog/python/textfsm.html"> TextFSM </a></li>
                             <li class="fragment"><a href="https://developer.cisco.com/docs/pyats/#!introduction/cisco-pyats-network-test--automation-solution"> Genie/PyATS </a></li>
                             <li class="fragment"><a href="https://ttp.readthedocs.io/en/latest/"> Template text parser (TTP) </a></li>
-                            <li class="fragment"> Regular Expresions (regex) </li>
+                            <li class="fragment"><a href="https://regex101.com/"> Regular Expresions (regex) </a></li>
                         </ul>
                     </section>
 
@@ -343,31 +394,31 @@
                 <section>   
                     
                     <section>
-                        <h4 style="color:#85335c"> (Network) infrastructure automation tools </h4>
+                        <h4 style="color:#7b0b44"> (Network) infrastructure automation tools </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Ansible </h5>
+                        <h5 style="color:#7b0b44"> Ansible </h5>
                         <img src="images/ansible_high_level.png" alt="Ansible architecture" style="height: 450px">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Salt </h5> 
+                        <h5 style="color:#7b0b44"> Salt </h5> 
                         <img src="images/salt_high_level.png" alt="Salt architecture" style="height: 450px">   
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Puppet </h5>
+                        <h5 style="color:#7b0b44"> Puppet </h5>
                         <img src="images/puppet_run.png" alt="Puppet run overview" style="height: 450px">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Chef </h5>
+                        <h5 style="color:#7b0b44"> Chef </h5>
                         <img src="images/chef_architecture.jpg" alt="Chef architecture" style="height: 450px">   
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Terraform </h5>
+                        <h5 style="color:#7b0b44"> Terraform </h5>
                         <img src="images/terraform_workflow.jpg" alt="Terraform workflow" style="height: 400px">  
                     </section>
 
@@ -376,7 +427,7 @@
                 </section>
                 <!-- Links -->
                 <section>
-                    <p style="color:#85335c">Links for thurther development</p>
+                    <p style="color:#7b0b44">Links for thurther development</p>
                         <section>
                         </section>
                         <section>
@@ -410,11 +461,11 @@
                 <section>
 
                     <section>
-                        <h3 style="color:#85335c"> Network Automation Lab </h3>
+                        <h3 style="color:#7b0b44"> Network Automation Lab </h3>
                     </section>
                 
                     <section>
-                        <h5 style="color:#85335c"> Agenda (Practice) </h5>
+                        <h5 style="color:#7b0b44"> Agenda (Practice) </h5>
                         <ul>
                             <li> Environment </li>
                             <li> Lab devices </li>
@@ -430,16 +481,16 @@
                 <section>
 
                     <section>
-                        <h4 style="color:#85335c"> Environment </h4>
+                        <h4 style="color:#7b0b44"> Environment </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Simplified lab topology </h5>
-                        <img src="images/lab.png" alt="Lab Topology" style="height: 400px; margin: 0 auto 4rem auto; background: transparent;">  
+                        <h5 style="color:#7b0b44"> Simplified lab topology </h5>
+                        <img src="images/lab_topology.svg" alt="Lab Topology" style="height: 400px; margin: 0 auto 4rem auto; background: transparent;">  
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Jumphost </h5>
+                        <h5 style="color:#7b0b44"> Jumphost </h5>
                         <ul>
                             <li> Linux VM (netauto) </li>
                             <li> Python3 installed </li>
@@ -453,29 +504,48 @@
                 <section>
                     
                     <section>
-                        <h4 style="color:#85335c"> Lab network devices </h4>
+                        <h4 style="color:#7b0b44"> Lab network devices </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> N7K </h5>
+                        <h4 style="color:#7b0b44"> Lab network devices </h4>
+                        <ul>
+                            <li><a href="https://www.cisco.com/c/en/us/products/switches/nexus-9000v-switch/index.html"> Cisco Nexus 9000v</a></li>
+                        </ul>
+                        <p>
+                            <img src="images/N9300v.svg" alt="N9300v" style="height: 150px; margin: 0 auto 4rem auto; background: transparent;"> 
+                        </p>
+                    </section>
+
+                    <section>
+                        <h4 style="color:#7b0b44"> Lab network devices </h4>
+                        <ul>
+                            <li><a href="https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8000v-edge-software/datasheet-c78-744101.html?oid=dstetr023051">Cisco Catalyst 8000v</a></li>
+                        </ul>
+                        <p>
+                            <img src="images/C8000v.svg" alt="C8000v" style="height: 150px; margin: 0 auto 4rem auto; background: transparent;"> 
+                        </p>
+                    </section>
+                    <!-- <section>
+                        <h5 style="color:#7b0b44"> N7K </h5>
                         <p> Nexus 7010 (version 6.2.24a)</p>
                         <p><a href="https://www.cisco.com/c/en/us/support/switches/nexus-7000-series-switches/products-installation-and-configuration-guides-list.html"> Configuration guides </a> and <a href="https://www.cisco.com/c/en/us/products/collateral/switches/nexus-7000-series-switches/Data_Sheet_C78-437762.html">datasheet</a></p>
                         <img src="images/n7k.jpg" alt="N7K" style="height: 300px; margin: 0 auto 4rem auto; background: transparent;">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> N5K </h5>
+                        <h5 style="color:#7b0b44"> N5K </h5>
                         <p> Nexus 5010 (version 5.1.3 N2 1a)</p>
                         <p><a href="https://www.cisco.com/c/en/us/support/switches/nexus-5000-series-switches/products-installation-and-configuration-guides-list.html"> Configuration guides </a> and <a href="https://www.cisco.com/c/dam/global/en_sg/training-events/datacentertechbyte/assets/pdfs/cisco_nexus_5000_ds.pdf">datasheet</a></p>
                         <img src="images/n5k.jpg" alt="N5K" style="height: 150px; margin: 0 auto 4rem auto; background: transparent;">
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> N2K </h5>
+                        <h5 style="color:#7b0b44"> N2K </h5>
                         <p> Nexus 2248TP </p>
                         <p><a href="https://www.cisco.com/c/en/us/products/collateral/switches/nexus-2000-series-fabric-extenders/data_sheet_c78-507093.html">Datasheet</a></p>
                         <img src="images/n2k.png" alt="N2K" style="height: 150px; margin: 0 auto 4rem auto; background: transparent;">
-                    </section>
+                    </section> -->
 
                 </section>
 
@@ -483,11 +553,11 @@
                 <section>
                     
                     <section>
-                        <h4 style="color:#85335c"> Ansible </h4>
+                        <h4 style="color:#7b0b44"> Ansible </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Features </h5>
+                        <h5 style="color:#7b0b44"> Features </h5>
                         <ul>
                             <li> Python based - wide developer community </li>
                             <li> Low user entry level - easy to use </li>
@@ -497,7 +567,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Architecture </h5>
+                        <h5 style="color:#7b0b44"> Architecture </h5>
                         <img src="images/ansible_high_level.png" alt="Ansible architecture" style="height: 250px">
                         <ul>
                             <li> Inventory - managed device list </li>
@@ -508,16 +578,16 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Instructions </h5>
+                        <h5 style="color:#7b0b44"> Instructions </h5>
                         <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/1-ansible.md" target="_blank">My first Ansible playbook</a></p>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Playbook </h5>
+                        <h5 style="color:#7b0b44"> Playbook </h5>
                         <pre class="fragment" data-id="code-animation"><code class="yaml" data-trim>
                         ---
                         - name: First playbook
-                          hosts: N5K-1
+                          hosts: N9K-1
                           gather_facts: false
                           connection: network_cli
 
@@ -525,13 +595,13 @@
 
                           - name: Ping module
                             cisco.nxos.nxos_ping:
-                              dest: 192.168.227.51
+                              dest: 192.168.227.91
                               vrf: management
                     </code></pre>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Additional tasks </h5>
+                        <h5 style="color:#7b0b44"> Additional tasks </h5>
                         <ul>
                             <li> Test other modules: vlans, static routes, facts </li>
                             <li> Move arguments to host variables </li>
@@ -545,11 +615,11 @@
                 <section>
 
                     <section>
-                        <h4 style="color:#85335c"> Native Python automation </h4>
+                        <h4 style="color:#7b0b44"> Native Python automation </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Netmiko library </h5>
+                        <h5 style="color:#7b0b44"> Netmiko library </h5>
                         <p>The purposes of this library are the following:</p>
                         <ul>
                             <li> Successfully establish an SSH connection to the device </li>
@@ -561,7 +631,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> SDK </h5>
+                        <h5 style="color:#7b0b44"> SDK </h5>
                         <p>Software Development Kit</p>
                         <ul>
                             <li> Enables/simplifies programming by providing usefull tools</li>
@@ -570,7 +640,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Instructions </h5>
+                        <h5 style="color:#7b0b44"> Instructions </h5>
                         <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/2-python.md" target="_blank">My first automation program</a></p>
                     </section>
 
@@ -580,11 +650,11 @@
                 <!-- API -->
                 <section>
                     <section>
-                        <h4 style="color:#85335c"> API </h4>
+                        <h4 style="color:#7b0b44"> API </h4>
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Application programming interface </h5>
+                        <h5 style="color:#7b0b44"> Application programming interface </h5>
                         <ul>
                             <li class="fragment"> Application - interaction with an application/system/hardware component </li>
                             <li class="fragment"> Programming - intended to be used by other programs</li>
@@ -594,7 +664,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> API tools </h5>
+                        <h5 style="color:#7b0b44"> API tools </h5>
                         <ul>
                             <li> Postman </li>
                             <li> cURL </li>
@@ -603,7 +673,7 @@
                     </section>
 
                     <section>
-                        <h5 style="color:#85335c"> Instructions </h5>
+                        <h5 style="color:#7b0b44"> Instructions </h5>
                         <p><a href="https://github.com/vainiusd/automation_intro/blob/master/labs/3-api.md" target="_blank">My first API calls</a></p>
                     </section>
 
