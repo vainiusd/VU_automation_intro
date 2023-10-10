@@ -71,13 +71,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 ### Connect
 ```
 import netmiko
-n5k_1 = { 
+n9k_1 = { 
     'device_type': 'cisco_nxos', 
-    'host': '192.168.227.51', 
-    'username': 'lab', 
-    'password': 'cisco', 
+    'host': '192.168.227.91', 
+    'username': 'admin', 
+    'password': 'Cisco12345', 
 }
-conn = netmiko.ConnectHandler(**n5k_1)
+conn = netmiko.ConnectHandler(**n9k_1)
 conn.find_prompt()
 
 ```
