@@ -67,6 +67,24 @@ BC:
 EOF
 ```
 
+Additional debug outupt from a playbook that explains the inventory structure.
+```
+cat <<'EOF' > playbook.yml
+---
+- name: Inventory debug
+  hosts: BC
+  gather_facts: false
+  connection: local
+
+  tasks:
+
+  - name: debug
+    ansible.builtin.debug:
+      msg: "Inventory item ({{ inventory_hostname }}) belongs to groups {{ group_names }}"
+EOF
+```
+Run this playbook with `ansible-playbook playbook.yml`
+
 ### Multiple files
 You can arragne Your inventory in multiple files stored in a directory and point Your inventory collection to that directory.
 
